@@ -6,6 +6,8 @@
 
 MeDCMotor motor_9(9);
 MeDCMotor motor_10(10);
+
+/*Code Crazy 8 Dance*/
 void move(int direction, int speed)
 {
       int leftSpeed = 0;
@@ -30,7 +32,7 @@ double angle_rad = PI/180.0;
 double angle_deg = 180.0/PI;
 MeRGBLed rgbled_7(7, 7==7?2:4);
 MeBuzzer buzzer;
-
+/*Code Buzzer Music*/
 void setup(){
     buzzer.tone(494, 250);
     delay(20);
@@ -54,7 +56,7 @@ void setup(){
     delay(20);
     _delay(0.02);
 }
-
+/*Code LED lights on board*/
 void loop(){
     motor_9.run((9)==M1?-(255):(255));
     motor_10.run((10)==M1?-(0):(0));
@@ -73,7 +75,7 @@ void loop(){
     _delay(1);
     _loop();
 }
-
+/*Code for stopping everything at once*/
 void _delay(float seconds){
     long endTime = millis() + seconds * 1000;
     while(millis() < endTime)_loop();
